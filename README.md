@@ -21,7 +21,7 @@ npm install --save thweads
 ```js
 const Thweads = require('thweads');
 const thweads = new Thweads({ threads: 4 });
-//or Thweads() to automatically set threads to half of available
+//or Thweads() to automatically set threads
 
 thweads.addAction(async () => {
     const workerData = new Array(10000000).fill(1);
