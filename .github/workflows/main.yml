@@ -1,0 +1,30 @@
+name: Benchmark
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - uses: actions/cache@v1
+        name: Cache
+        
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
+
+      - run: npm install -D benchmark
+        name: Dependencies
+
+      - run: node test.js
+        name: Benchmark
