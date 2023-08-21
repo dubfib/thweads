@@ -1,8 +1,8 @@
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
 
 module.exports = class Thweads {
-    constructor({ threads } = {}) {
-        this.threads = threads || Math.max(1, Math.floor(require('os').cpus().length / 2));
+    constructor({ thweads } = {}) {
+        this.thweads = thweads || Math.max(1, Math.floor(require('os').cpus().length / 2));
         this.actions = [];
         this.completedTasks = 0;
     }
@@ -27,9 +27,9 @@ module.exports = class Thweads {
             return;
         };
 
-        const actionsPerThread = Math.ceil(this.actions.length / this.threads);
+        const actionsPerThread = Math.ceil(this.actions.length / this.thweads);
 
-        for (let i = 0; i < this.threads; i++) {
+        for (let i = 0; i < this.thweads; i++) {
             const start = i * actionsPerThread;
             const end = start + actionsPerThread;
             const threadActions = this.actions.slice(start, end).map(fn => fn.toString());

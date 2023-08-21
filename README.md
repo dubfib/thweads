@@ -20,7 +20,7 @@ npm install --save thweads
 ## Usage
 ```js
 const Thweads = require('thweads');
-const thweads = new Thweads({ threads: 4 });
+const thweads = new Thweads({ thweads: 4 });
 //or Thweads() to automatically set thweads
 
 thweads.addAction(async () => {
