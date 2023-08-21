@@ -1,7 +1,7 @@
 <div align="center">
     <p>
         <a href="https://github.com/dubfib/thweads">
-            <img width="512" height="512" src="https://github.com/dubfib/thweads/blob/main/thweads.png"/>
+            <img width="412" height="412" src="https://github.com/dubfib/thweads/blob/main/thweads.png"/>
         </a>
         <strong>
             <h2>Simple multithreading for Node.js</h2>
